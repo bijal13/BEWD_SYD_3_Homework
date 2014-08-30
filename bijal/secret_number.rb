@@ -40,45 +40,44 @@ def gets_input
 	gets
 end
 
-def looping =
-if a.to_i < secret_number
-	puts "Too Low! Guess again. You have #{guesses} guesses left before the game is over! Enter another number!"
-	gets_input
-elsif a.to_i > secret_number
-	puts "Too high! Guess again. You have #{guesses} guesses left before the game is over! Enter another number!"
-	gets_input
-end
-end
-
-
-
-
 secret_number = 7
 
 
 puts "Welcome to the Secret Number game"
 puts "What is your name?"
 player_name = gets_input
-puts "Hi #{player_name} + The objective of the game is to have players guess a secret number from 1-10. You only have three guesses. Good luck. Tell me your first guess"
+puts "Hi #{player_name}"
+puts " The objective of the game is to have players guess a secret number from 1-10. You only have three guesses. Good luck"
+puts "Tell me your first guess"
 
-a = gets.chomp
+a = gets
 
-
-if a.to_i = secret_number
-	puts x = "Congratulations! That is correct. You have won."
+if a.to_i < 7
+	puts x = "Too Low! Guess again. You have two guesses left before the game is over! Enter another number!"
+elsif a.to_i > 7
+	puts x = "Too high! Guess again. You have two guesses left before the game is over! Enter another number!"
+else 
+	puts x = "Congratulations! That is correct"
 end
 
-	if a != secret_number
-		count = 3
-		while count < 3
-			puts looping
-count - = 1
+b = gets
 
-b = gets.chomp
+if b.to_i < 7
+	puts y = "Too Low! Guess again. You have one guess left before the game is over! Enter another number!"
+elsif b.to_i > 7
+	puts y = "Too High! Guess again. You have one guess left before the games is over! Enter another number!"
+else
+	puts y = "Congratulations! That is correct"
+end
 
-	if b.to_i < secret_number
+if y != "Congratulations! That is correct"
+
+c = gets
+
+	if c.to_i < 7
 	puts "Too Low! Am sorry you have lost the game. Game over! The answer was #{secret_number}"
-				elsif b.to_i > secret_number
+				elsif c.to_i > 7
 					puts "Too High! Am sorry you have lost the game. Game over! The answer was #{secret_number}"
 	else puts "Congratulations! That is correct!"
 	end
+end
