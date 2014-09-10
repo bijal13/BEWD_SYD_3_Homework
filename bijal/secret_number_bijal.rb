@@ -65,7 +65,7 @@ a = gets.chomp
 
 
 if a.to_i = secret_number
-	puts x = "Congratulations! That is correct. You have won."
+	puts "Congratulations! That is correct. You have won."
 end
 
 	if a != secret_number
@@ -82,3 +82,5 @@ b = gets.chomp
 					puts "Too High! Am sorry you have lost the game. Game over! The answer was #{secret_number}"
 	else puts "Congratulations! That is correct!"
 	end
+
+
