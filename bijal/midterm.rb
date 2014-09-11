@@ -25,6 +25,7 @@ API Ideas:
 
 require 'json'
 require 'rest-client'
+require 'byebug'
 
 class Postcode
   attr_accessor :postcode_data
@@ -32,12 +33,13 @@ class Postcode
     @postcode_data
   end
 
+
 #We are creating an instance of the class Postcode.
   def getsdata (postcode)
-  postcode_data = RestClient.get('http://api.postcodes.io/postcodes/#{postcode}.json')
+  postcode_data = RestClient.get("http://api.postcodes.io/postcodes/#{postcode}")
   hashofpostcode_data = JSON.parse(postcode_data)
-  return resultsdata = hashofpostcode_data[2]
-  puts finaldata = resultsdata.each {|key,value| puts "#{key} is #{value}"}
+  resultsdata = hashofpostcode_data['result']
+  puts resultsdata.each {|key,value| puts "#{key} is #{value}"}
   end
 end
 
@@ -51,6 +53,8 @@ postcode = gets.chomp
   postcode_data.getsdata (postcode)
   else puts "That postcode is not valid."
   end
+
+
 
 
 #We are creating a function that enables postcode data to be retrieved and returned. RestClient is a class. ‘gets’ is method of the class RestClient. ‘body’ is a pre-defined function of RestClient.
